@@ -94,7 +94,8 @@ def stripSents(inputText, outfile, limit, replace):
             print(sent[:-1], file=outfile)
             return 1
         # insert . in sentences not ending by punctuation
-        elif (sent[-1] not in [".", "!", "?", ":", ";"]):
+        elif (sent[-1] not in [".", "!", "?", ":", ";"]) and \
+            not ((sent[-1] in ["'", '"']) and (sent[-2] in [".", "!", "?"])):
             print(sent+".", file=outfile)
             return 1
         # remove encompassing quotations " or ' if the quotations do not appear inside the sentence
@@ -105,9 +106,21 @@ def stripSents(inputText, outfile, limit, replace):
         else:
             print(sent, file=outfile)
             return 1
+    def isAbbrev(chunk, abbrev):
+        abbr = False
+        for a in abbrev:
+            if (chunk == a):
+                abbr = True
+                break
+            else:
+                lasts = -len(a)
+                if (chunk[lasts:] == a) and (not chunk[lasts-1].isalpha()):
+                    abbr = True
+                    break
+        return abbr
     # the function stripSents main body
     abbrev = []
-    infile =open("abbrev.txt", "r")
+    infile = open("abbrev.txt", "r")
     for line in infile:
         abbrev.append(line[:-1])
     infile.close()
@@ -140,12 +153,10 @@ def stripSents(inputText, outfile, limit, replace):
             s += cleanPrint(sent[1:], outfile)
             break
         chunk = bagOfChunks[i]
-        #if (chunk == "sequência\","):
-        #    input("dang")
         # if there is a limit and the chunk is greater than the limit, discard it
         if (limit != 0) and (len(chunk) > limit):
             continue
-        # if there is a limit and it is reached, end the sentence arbitrarily
+        # if there is a limit and it is reached, ends the sentence arbitrarily
         elif (limit != 0) and (len(sent) + len(chunk) > limit):
             s += cleanPrint(sent[1:], outfile)
             sent = chunk
@@ -162,21 +173,23 @@ def stripSents(inputText, outfile, limit, replace):
             sent += " " + chunk
             s += cleanPrint(sent[1:], outfile)
             sent = ""
+        # chunk ends with ! or ? followed by quotations that had appear before an odd number is an end of sentence
+        elif (chunk[-2:] in ["!'", '!"', "?'", '?"']):
+            sent += " " + chunk
+            s += cleanPrint(sent[1:], outfile)
+            sent = ""
+        elif (chunk[-2:] in [".'", '."']):
+            sent += " " + chunk
+            abbr = isAbbrev(chunk[:-1], abbrev)
+            if not abbr:
+                s += cleanPrint(sent[1:], outfile)
+                sent = ""
         # a chunk not ending with ! ? ... ; : or . is not an end of sentence
         elif (chunk[-1] != "."):
             sent += " " + chunk
         # chunk ending by . is either a know abbreviation (not an end of sentence), or an end of sentence
         elif (chunk[-1] == "."):
-            abbr = False
-            for a in abbrev:
-                if (chunk == a):
-                    abbr = True
-                    break
-                else:
-                    lasts = -len(a)
-                    if (chunk[lasts:] == a) and (not chunk[lasts-1].isalpha()):
-                        abbr = True
-                        break
+            abbr = isAbbrev(chunk, abbrev)
             if (abbr):
                 sent += " " + chunk
             else:
