@@ -22,7 +22,7 @@ This program also performs, optionally, replcing of unusual characters, as non s
 Another option available in this program is to provide a limit for the number of characters in each sentence.
 
 ## Usage example
-`portSent -o sents.txt -r -l 2048 text1.txt text2.txt`
+`python3 portSent -o sents.txt -r -l 2048 text1.txt text2.txt`
 
 This command fetch the input from files `text1.txt` and `text2.txt`, it performs the substitution of non standard characters (`-r`) and sets a limit of 2048 characters per sentence (`-l 2048`), saving the produced sentences in the file `sents.txt` (`-o sents.txt`).
 
