@@ -24,12 +24,8 @@ The output will be split in three sentences:
 
 To do so, this program needs a list of known abbreviations in Portuguese that is read from the file `abbrev.txt`.
 
-<<<<<<< HEAD
 ## Program Options
-This program also performs, optionally, replcing of unusual characters, as non standard quotation marks and dashes, by the traditional characters available in both ASCII and UTF-8.
-=======
 This program also performs, optionally, replacing of unusual characters, as non standard quotation marks and dashes, by the traditional characters available in both ASCII and UTF-8.
->>>>>>> cbad94f407fc201e7c2af7e493e41eb2f5cd91b3
 
 Another option available in this program is to provide a limit for the number of characters in each sentence.
 
