@@ -11,7 +11,7 @@ The output will be split in three sentences:
 
 `A rua Dr. Flores é uma rua da cidade de Porto Alegre?`
 
-`Quase 90% dos gaúchos vai dizer-nos que sim.`
+`Provavelmente, 90% dos gaúchos vai dizer-nos que sim.`
 
 `Até os que não moram nos bairros de Porto Alegre.`
 
