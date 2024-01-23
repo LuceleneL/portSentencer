@@ -1,4 +1,4 @@
-# PortSentencer
+# portSentencer
 This repository has the `portSent.py` program, a sentencer for Portuguese text.
 
 This program receives as input one or more textual files with text in Portuguese and generates a single textual file where each sentence is saved in a different line.
