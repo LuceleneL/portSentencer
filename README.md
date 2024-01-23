@@ -3,7 +3,7 @@ This repository has the `portSent.py` program, a sentencer for Portuguese text.
 
 This program receives as input one or more textual files with text in Portuguese and generates a single textual file where each sentence is saved in a different line. For example, if the following text is given as input:
 
-`A rua Dr. Flores é uma rua da cidade de Porto Alegre? Quase 90% dos gaúchos vai`
+`A rua Dr. Flores é uma rua da cidade de Porto Alegre? Provavelmente, 90% dos gaúchos vai`
 
 `dizer-nos que sim. Até os que não moram em nos bairros de Porto Alegre.`
 
