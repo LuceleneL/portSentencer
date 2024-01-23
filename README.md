@@ -1,6 +1,26 @@
 # PortSentencer
 This repository has the portSent.py program, a sentencer for Portuguese text.
 
+This program receives as input one or more textual files with text in Portuguese and generates a single textual file where each sentence is saved in a different line. For example, if the following text is given as input:
+
+`A rua Dr. Flores é uma rua de Porto Alegre? Quase todo gaúcho vai dizer que sim.`
+
+The output will be split in two sentences:
+
+`A rua Dr. Flores é uma rua de Porto Alegre?`
+`Quase todo gaúcho vai dizer que sim.`
+
+To do so, this program needs a list of known abbreviations in Portuguese that is read from the file `abbrev.txt`.
+
+This program also performs, optionally, replcing of unusual characters, as non standard quotation marks and dashes, by the traditional characters available in both ASCII and UTF-8.
+
+Another option available in this program is to provide a limit for the number of characters in each sentence.
+
+## Usage example
+`portSent -o sents.txt -r -l 2048 text1.txt text2.txt`
+
+This command fetch the input from files `text1.txt` and `text2.txt`, it performs the substitution of non standard characters (`r`) and sets a limit of 2048 characters per sentence (`-l 2048`), saving the produced sentences in the file `sents.txt`.
+
 # Contents
 The files in this repository are:
 - `README.md` - this read explanatory file;
