@@ -24,13 +24,17 @@ The output will be split in three sentences:
 
 To do so, this program needs a list of known abbreviations in Portuguese that is read from the file `abbrev.txt`.
 
+<<<<<<< HEAD
 ## Program Options
 This program also performs, optionally, replcing of unusual characters, as non standard quotation marks and dashes, by the traditional characters available in both ASCII and UTF-8.
+=======
+This program also performs, optionally, replacing of unusual characters, as non standard quotation marks and dashes, by the traditional characters available in both ASCII and UTF-8.
+>>>>>>> cbad94f407fc201e7c2af7e493e41eb2f5cd91b3
 
 Another option available in this program is to provide a limit for the number of characters in each sentence.
 
 ## Usage example
-`python3 portSent -o sents.txt -r -l 2048 text1.txt text2.txt`
+`python3 portSent.py -o sents.txt -r -l 2048 text1.txt text2.txt`
 
 This command fetch the input from files `text1.txt` and `text2.txt`, it performs the substitution of non standard characters (`-r`) and sets a limit of 2048 characters per sentence (`-l 2048`), saving the produced sentences in the file `sents.txt` (`-o sents.txt`).
 
