@@ -3,17 +3,17 @@ This repository has the `portSent.py` program, a sentencer for Portuguese text.
 
 This program receives as input one or more textual files with text in Portuguese and generates a single textual file where each sentence is saved in a different line. For example, if the following text is given as input:
 
-`A rua Dr. Flores é uma rua de Porto Alegre? Quase todo gaúcho vai`
+`A rua Dr. Flores é uma rua da cidade de Porto Alegre? Quase 90% dos gaúchos vai`
 
-`dizer que sim. Até os que não moram em Porto Alegre.`
+`dizer-nos que sim. Até os que não moram em nos bairros de Porto Alegre.`
 
 The output will be split in three sentences:
 
-`A rua Dr. Flores é uma rua de Porto Alegre?`
+`A rua Dr. Flores é uma rua da cidade de Porto Alegre?`
 
-`Quase todo gaúcho vai dizer que sim.`
+`Quase 90% dos gaúchos vai dizer-nos que sim.`
 
-`Até os que não moram em Porto Alegre.`
+`Até os que não moram nos bairros de Porto Alegre.`
 
 To do so, this program needs a list of known abbreviations in Portuguese that is read from the file `abbrev.txt`.
 
