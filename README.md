@@ -7,7 +7,7 @@ This program receives as input one or more textual files with text in Portuguese
 
 `Alegre? Provavelmente, 90% dos gaúchos vai`
 
-`dizer-nos que sim. Até os que não moram em`
+`dizer-nos que sim. Até os que não moram`
 
 `nos bairros de Porto Alegre.`
 
