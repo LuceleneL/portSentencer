@@ -8,6 +8,7 @@ This program receives as input one or more textual files with text in Portuguese
 The output will be split in two sentences:
 
 `A rua Dr. Flores é uma rua de Porto Alegre?`
+
 `Quase todo gaúcho vai dizer que sim.`
 
 To do so, this program needs a list of known abbreviations in Portuguese that is read from the file `abbrev.txt`.
